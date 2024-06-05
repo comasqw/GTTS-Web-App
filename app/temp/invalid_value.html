@@ -1,0 +1,29 @@
+{% extends 'index.html' %}
+
+{% block text %}
+
+    {% for error in errors %}
+
+        {% if (error[0] == "missing" or error[0] == "too_long") and "user_text" in error[1]%}
+            <div style="color: red;">
+                The text should be between 1 and 500 characters!
+            </div>
+        {% endif %}
+
+    {% endfor %}
+
+{% endblock %}
+
+{% block lang %}
+
+    {% for error in errors %}
+
+        {% if error[0] == "missing" and "language" in error[1]%}
+            <div style="color: red;">
+                Choose  the language!
+            </div>
+        {% endif %}
+
+    {% endfor %}
+
+{% endblock %}

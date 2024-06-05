@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TTS</title>
+</head>
+<body>
+    <header>
+        <h1>
+            Text to Speech
+        </h1>
+    </header>
+    <div>
+        <form action="/submit" method="post">
+            <div>
+                <h2>Text</h2>
+                <p>Min: 1 character</p>
+                <p>Max: 500 characters</p>
+                <textarea name="user_text" id="user_text" cols="30" rows="10"></textarea>
+                {% block text %}{% endblock %}
+            </div>
+            <div>
+                <h2>Language</h2>
+                <div>
+                    <label>English</label>
+                    <input type="radio" value="en" name="language">
+                </div>
+                <div>
+                    <label>Russian</label>
+                    <input type="radio" value="ru" name="language">
+                    {% block lang %}{% endblock %}
+                </div>
+            </div>
+            <div>
+                <h2>Slow</h2>
+                <div>
+                    <label>True</label>
+                    <input type="radio" value="True" name="slow">
+                </div>
+                <div>
+                    <label>False</label>
+                    <input checked type="radio" value="False" name="slow">
+                </div>
+            </div>
+            <br>
+            <div>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
